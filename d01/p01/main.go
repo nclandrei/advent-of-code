@@ -12,6 +12,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not read from file: %v\n", err)
 	}
+	defer f.Close()
 
 	scanner := bufio.NewScanner(f)
 
