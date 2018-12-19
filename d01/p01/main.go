@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	f, err := os.Open("./data/input.txt")
+	f, err := os.Open("../data/input.txt")
 	if err != nil {
 		log.Fatalf("could not read from file: %v\n", err)
 	}
@@ -16,9 +16,9 @@ func main() {
 	scanner := bufio.NewScanner(f)
 
 	var resultingFrequency int
+
 	for scanner.Scan() {
-		line := scanner.Text()
-		frequency, err := strconv.Atoi(line)
+		frequency, err := strconv.Atoi(scanner.Text())
 		if err != nil {
 			log.Fatalf("could not parse number: %v\n", err)
 		}
