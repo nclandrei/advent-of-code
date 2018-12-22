@@ -87,3 +87,13 @@ func main() {
 		log.Fatalf("error while scanning: %v\n", err)
 	}
 }
+
+func addClaimToFabricMatrix(claim claim, matrix [][]int) {
+	for i := claim.top; i < claim.top+claim.tall; i++ {
+		if matrix[i] == nil {
+			matrix[i] = make([]int, 1000)
+		for j := claim.left; j < claim.left+claim.wide; j++ {
+			matrix[i][j] = claim.i
+		}
+	}
+}

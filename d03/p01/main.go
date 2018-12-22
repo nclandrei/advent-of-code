@@ -93,10 +93,10 @@ func main() {
 
 func addClaimToFabricMatrix(claim claim, matrix [][]int) {
 	for i := claim.top; i < claim.top+claim.tall; i++ {
+		if matrix[i] == nil {
+			matrix[i] = make([]int, 1000)
+		}
 		for j := claim.left; j < claim.left+claim.wide; j++ {
-			if matrix[i] == nil {
-				matrix[i] = make([]int, 1000)
-			}
 			matrix[i][j]++
 		}
 	}
